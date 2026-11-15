@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "name": "Bangles",
+      "icon": "🏷️",
+      "logo": "",
+      "hidden": false
+    },
+    {
+      "name": "Hair bands",
+      "icon": "🧶",
+      "logo": "",
+      "hidden": false
+    },
+    {
+      "name": "Clips",
+      "icon": "✨",
+      "logo": "",
+      "hidden": false
+    },
+    {
+      "name": "Flowers Bouquet",
+      "icon": "💐",
+      "logo": "",
+      "hidden": false
+    },
+    {
+      "name": "Headbands",
+      "icon": "💐",
+      "logo": "",
+      "hidden": true
+    },
+    {
+      "name": "Headbands",
+      "icon": "💐",
+      "logo": "",
+      "hidden": true
+    },
+    {
+      "name": "Headbands",
+      "icon": "💐",
+      "logo": "",
+      "hidden": true
+    },
+    {
+      "name": "Headbands",
+      "icon": "💐",
+      "logo": "",
+      "hidden": true
+    }
+  ]
+}

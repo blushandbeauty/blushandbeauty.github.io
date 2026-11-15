@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # change this
+  branch: main
+
+media_folder: images/uploads
+public_folder: images/uploads
+
+collections:
+  - name: shop
+    label: Shop
+    files:
+      - name: details
+        label: Shop details
+        file: content/shop.json
+        fields:
+          - { label: Shop name, name: shopName, widget: string }
+          - { label: Big headline, name: headline, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Owner name, name: owner, widget: string }
+          - { label: Her story (leave empty to hide the About section), name: story, widget: text, required: false }
+          - { label: Her photo, name: aboutPhoto, widget: image, required: false }
+          - { label: WhatsApp number (country code first, e.g. 8801712345678), name: whatsapp, widget: string }
+          - { label: Instagram link, name: instagram, widget: string, required: false }
+          - { label: Facebook link, name: facebook, widget: string, required: false }
+          - { label: Currency symbol, name: currency, widget: string, default: "৳" }
+          - { label: Selling points (3 short lines), name: perks, widget: list, required: false }
+          - { label: Good to know (delivery, returns, how to order - one line each), name: notes, widget: list, required: false }
+
+      - name: categories
+        label: Categories
+        file: content/categories.json
+        fields:
+          - label: Categories
+            name: categories
+            widget: list
+            label_singular: category
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Emoji icon (used if there is no logo), name: icon, widget: string, required: false }
+              - { label: Logo or photo (optional), name: logo, widget: image, required: false }
+              - { label: Hide this category (also hides its products), name: hidden, widget: boolean, default: false, required: false }
+
+      - name: products
+        label: Products
+        file: content/products.json
+        fields:
+          - label: Products
+            name: products
+            widget: list
+            label_singular: product
+            add_to_top: true
+            summary: "{{fields.name}} - {{fields.cat}}"
+            fields:
+              - { label: Product name, name: name, widget: string }
+              - label: Category
+                name: cat
+                widget: relation
+                collection: shop
+                file: categories
+                search_fields: ["categories.*.name"]
+                value_field: "categories.*.name"
+                display_fields: ["categories.*.name"]
+              - { label: Price, name: price, widget: number, value_type: int, min: 0 }
+              - { label: Photo, name: img, widget: image, required: false }
+              - { label: Emoji (shown only if there is no photo), name: emoji, widget: string, required: false }
+              - { label: Sold out, name: soldOut, widget: boolean, default: false, required: false }

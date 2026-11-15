@@ -1,0 +1,7 @@
+{
+  "products": [
+    {"name": "Churi", "cat": "Bangles", "price": 150, "img": "", "emoji": "🎀", "soldOut": false},
+    {"name": "Hair band", "cat": "Hair bands", "price": 200, "img": "", "emoji": "🧶", "soldOut": false}
+    
+  ]
+}
