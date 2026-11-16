@@ -2,6 +2,7 @@ backend:
   name: github
   repo: blushandbeauty/blushandbeauty.github.io   # change this
   branch: main
+  base_url: https://sveltia-cms-auth.debnathpriotush.workers.dev
 
 media_folder: images/uploads
 public_folder: images/uploads
