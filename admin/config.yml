@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: debnathpriotush/BlushandBeauty   # change this
+  repo: blushandbeauty/blushandbeauty.github.io   # change this
   branch: main
 
 media_folder: images/uploads
