@@ -67,3 +67,5 @@ collections:
               - { label: Photo, name: img, widget: image, required: false }
               - { label: Emoji (shown only if there is no photo), name: emoji, widget: string, required: false }
               - { label: Sold out, name: soldOut, widget: boolean, default: false, required: false }
+              - { label: Description (size, material, colours, etc.), name: desc, widget: text, required: false }
+              - { label: "Product code (short, no spaces, e.g. scrunchie-01. Set once, never change it)", name: code, widget: string, required: false }
