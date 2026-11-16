@@ -126,7 +126,7 @@ function start(C) {
       list.forEach(({p, i}) => {
       const t = document.createElement("article");
       t.className = "tile";
-      const link = "product.html?p=" + encodeURIComponent(p.name);
+      const link = "product.html?p=" + encodeURIComponent(p.code || p.name);
       const pageUrl = new URL(link, location.href).href;
       const ph = document.createElement("div");
       ph.className = "ph"; ph.style.background = tints[i % tints.length];
