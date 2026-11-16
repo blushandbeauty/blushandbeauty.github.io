@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .pwrap{max-width:900px;margin:0 auto;padding:1.2rem}
+  .pback{display:inline-block;margin-bottom:1rem;color:inherit;text-decoration:none;font-weight:600}
+  .pbox{display:grid;gap:1.5rem}
+  .ppic{background:#F7ECEE;border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:260px;font-size:5rem}
+  .ppic img{width:100%;height:auto;display:block}
+  .pinfo h1{margin:.2rem 0 .4rem}
+  .pcat{opacity:.7;margin:0}
+  .pprice{font-size:1.6rem;font-weight:700;margin:.4rem 0 1rem}
+  .pdesc{line-height:1.6;margin:0 0 1.2rem}
+  @media (min-width:700px){.pbox{grid-template-columns:1fr 1fr;align-items:start}}
+</style>
+</head>
+<body>
+<div class="pwrap">
+  <a class="pback" href="index.html">← Back to shop</a>
+  <div id="product" class="pbox">Loading...</div>
+</div>
+
+<script>
+const load = name => fetch("content/" + name + ".json").then(r => {
+  if (!r.ok) throw new Error(name);
+  return r.json();
+});
+
+Promise.all([load("shop"), load("products")]).then(([shop, prods]) => {
+  const box = document.getElementById("product");
+  const name = new URLSearchParams(location.search).get("p");
+  const p = (prods.products || []).find(x => x.name === name);
+  if (!p) { box.textContent = "Sorry, this product was not found."; return; }
+
+  const cur = shop.currency || "";
+  const number = String(shop.whatsapp || "").replace(/\D/g, "");
+  const msg = "Hi! I’d like to order the " + p.name + " (" + cur + p.price + ").\n" + location.href;
+  const waLink = "https://wa.me/" + number + "?text=" + encodeURIComponent(msg);
+
+  document.title = p.name + " | " + (shop.shopName || "");
+  box.textContent = "";
+
+  const pic = document.createElement("div");
+  pic.className = "ppic";
+  if (p.img) { const im = document.createElement("img"); im.src = p.img; im.alt = p.name; pic.appendChild(im); }
+  else pic.textContent = p.emoji || "🎀";
+
+  const info = document.createElement("div");
+  info.className = "pinfo";
+  const cat = document.createElement("p"); cat.className = "pcat"; cat.textContent = p.cat || "";
+  const h1 = document.createElement("h1"); h1.textContent = p.name;
+  const price = document.createElement("p"); price.className = "pprice"; price.textContent = cur + p.price;
+  const desc = document.createElement("p"); desc.className = "pdesc"; desc.textContent = p.desc || p.description || "";
+
+  let btn;
+  if (p.soldOut) {
+    btn = document.createElement("span"); btn.className = "btn out"; btn.textContent = "Sold out";
+  } else {
+    btn = document.createElement("a"); btn.className = "btn"; btn.href = waLink;
+    btn.target = "_blank"; btn.rel = "noopener"; btn.textContent = "Order on WhatsApp";
+  }
+
+  info.append(cat, h1, price, desc, btn);
+  box.append(pic, info);
+}).catch(() => {
+  document.getElementById("product").textContent = "Could not load. Please refresh the page.";
+});
+</script>
+</body>
+</html>

@@ -123,9 +123,11 @@ function start(C) {
     const list = all.slice(first, first + PER_PAGE);
 
     $("grid").innerHTML = "";
-    list.forEach(({p, i}) => {
+      list.forEach(({p, i}) => {
       const t = document.createElement("article");
       t.className = "tile";
+      const link = "product.html?p=" + encodeURIComponent(p.name);
+      const pageUrl = new URL(link, location.href).href;
       const ph = document.createElement("div");
       ph.className = "ph"; ph.style.background = tints[i % tints.length];
       if (p.img) { const im = document.createElement("img"); im.src = p.img; im.alt = p.name; im.loading = "lazy"; ph.appendChild(im); }
@@ -140,10 +142,13 @@ function start(C) {
       } else {
         a = document.createElement("a");
         a.className = "btn"; a.target = "_blank"; a.rel = "noopener";
-        a.href = wa("Hi! I’d like to order the " + p.name + " (" + cur + p.price + ").");
+        a.href = wa("Hi! I’d like to order the " + p.name + " (" + cur + p.price + ").\n" + pageUrl);
         a.textContent = "Order on WhatsApp";
       }
-      t.append(ph, cn, h3, pr, a);
+      const pa = document.createElement("a");
+      pa.href = link; pa.style.cssText = "color:inherit;text-decoration:none;display:block";
+      pa.append(ph, cn, h3, pr);
+      t.append(pa, a);
       $("grid").appendChild(t);
     });
 
