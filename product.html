@@ -14,7 +14,7 @@
   .pinfo h1{margin:.2rem 0 .4rem}
   .pcat{opacity:.7;margin:0}
   .pprice{font-size:1.6rem;font-weight:700;margin:.4rem 0 1rem}
-  .pdesc{line-height:1.6;margin:0 0 1.2rem}
+  .pdesc{line-height:1.6;margin:0 0 1.2rem;white-space:pre-line}
   @media (min-width:700px){.pbox{grid-template-columns:1fr 1fr;align-items:start}}
 </style>
 </head>
@@ -32,8 +32,8 @@ const load = name => fetch("content/" + name + ".json").then(r => {
 
 Promise.all([load("shop"), load("products")]).then(([shop, prods]) => {
   const box = document.getElementById("product");
-  const name = new URLSearchParams(location.search).get("p");
-  const p = (prods.products || []).find(x => x.name === name);
+  const key = new URLSearchParams(location.search).get("p");
+  const p = (prods.products || []).find(x => (x.code || x.name) === key);
   if (!p) { box.textContent = "Sorry, this product was not found."; return; }
 
   const cur = shop.currency || "";
