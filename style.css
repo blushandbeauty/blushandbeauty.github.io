@@ -114,3 +114,12 @@ footer .links{align-items:center}
 
 .notes{list-style:none;padding:0;max-width:560px;margin:0 auto 1.8rem;display:grid;gap:.6rem;font-size:.92rem;color:#D8C6CC}
 .notes:empty{display:none}
+
+/* page numbers */
+.pager{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5rem;margin-top:2.5rem}
+.pager:empty{display:none}
+.pager button{min-width:44px;height:44px;padding:0 .9rem;border:1px solid var(--line);background:#fff;border-radius:10px;font:500 1rem var(--body);color:var(--ink);cursor:pointer}
+.pager button:hover:not(:disabled){border-color:var(--ink)}
+.pager button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.pager button:disabled{opacity:.4;cursor:not-allowed}
+@media(max-width:760px){html{scroll-padding-top:8rem}}

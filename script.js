@@ -58,7 +58,11 @@ function start(C) {
   const cur = C.currency || "";
   const wa = text => "https://wa.me/" + number + "?text=" + encodeURIComponent(text);
   const isImg = v => /[\/.]/.test(v);
-  let activeCat = "All", query = "";
+  let activeCat = "All", query = "", page = 1;
+  const PER_PAGE = 12;   // products shown per page
+  const pager = document.createElement("nav");
+  pager.className = "pager"; pager.setAttribute("aria-label", "Pages");
+  $("grid").insertAdjacentElement("afterend", pager);
 
   document.title = C.shopName + " | Handmade hair bands & more";
   $("brand").textContent = C.shopName;
@@ -101,7 +105,7 @@ function start(C) {
     b.appendChild(iconNode(c.logo || c.icon));
     b.appendChild(document.createTextNode(c.name));
     b.onclick = () => {
-      activeCat = c.name;
+      activeCat = c.name; page = 1;
       catBox.querySelectorAll(".cat").forEach(x => x.setAttribute("aria-pressed", x === b));
       render();
     };
@@ -110,9 +114,13 @@ function start(C) {
 
   function render() {
     const q = query.trim().toLowerCase();
-    const list = C.products.map((p, i) => ({p, i})).filter(({p}) =>
+    const all = C.products.map((p, i) => ({p, i})).filter(({p}) =>
       (activeCat === "All" || p.cat === activeCat) &&
       (!q || (p.name + " " + (p.cat || "")).toLowerCase().includes(q)));
+    const pages = Math.max(1, Math.ceil(all.length / PER_PAGE));
+    if (page > pages) page = pages;
+    const first = (page - 1) * PER_PAGE;
+    const list = all.slice(first, first + PER_PAGE);
 
     $("grid").innerHTML = "";
     list.forEach(({p, i}) => {
@@ -139,21 +147,47 @@ function start(C) {
       $("grid").appendChild(t);
     });
 
-    const n = list.length;
-    $("count").textContent = q
+    const n = all.length;
+    $("count").textContent = (q
       ? n + (n === 1 ? " result" : " results") + " for “" + query.trim() + "”"
-      : n + (n === 1 ? " item" : " items") + (activeCat === "All" ? "" : " in " + activeCat);
+      : n + (n === 1 ? " item" : " items") + (activeCat === "All" ? "" : " in " + activeCat))
+      + (pages > 1 ? " (showing " + (first + 1) + "-" + (first + list.length) + ")" : "");
     $("empty").hidden = n > 0;
     $("count").hidden = n === 0;
     $("askBtn").href = wa("Hi! I’m looking for: " + (query.trim() || activeCat) + ". Can you make it?");
+    renderPager(pages);
+  }
+
+  function renderPager(pages) {
+    pager.innerHTML = "";
+    if (pages <= 1) return;
+    const add = (label, p, o) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.textContent = label;
+      if (o.aria) b.setAttribute("aria-label", o.aria);
+      if (o.current) { b.classList.add("on"); b.setAttribute("aria-current", "page"); }
+      if (o.disabled) b.disabled = true;
+      b.onclick = () => { page = p; render(); $("cats").scrollIntoView({behavior: "smooth"}); };
+      pager.appendChild(b);
+    };
+    add("Prev", page - 1, {disabled: page === 1, aria: "Previous page"});
+    let last = 0;
+    for (let p = 1; p <= pages; p++) {
+      if (p === 1 || p === pages || Math.abs(p - page) <= 1) {
+        if (last && p - last > 1) { const d = document.createElement("span"); d.textContent = "…"; pager.appendChild(d); }
+        add(String(p), p, {current: p === page, aria: "Page " + p});
+        last = p;
+      }
+    }
+    add("Next", page + 1, {disabled: page === pages, aria: "Next page"});
   }
 
   $("q").addEventListener("input", e => {
-    query = e.target.value;
+    query = e.target.value; page = 1;
     $("clear").hidden = !query;
     render();
   });
-  $("clear").onclick = () => { $("q").value = ""; query = ""; $("clear").hidden = true; render(); $("q").focus(); };
+  $("clear").onclick = () => { $("q").value = ""; query = ""; page = 1; $("clear").hidden = true; render(); $("q").focus(); };
   render();
 
   const full = u => /^https?:\/\//i.test(u) ? u : "https://" + u;
