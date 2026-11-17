@@ -1,6 +1,42 @@
 {
   "products": [
     {
+      "name": "Churi 5",
+      "cat": "Bangles",
+      "price": 500,
+      "salePrice": null,
+      "img": "/images/uploads/IMG-20261115-WA0015.jpg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "Bdhshs",
+      "code": "1236"
+    },
+    {
+      "name": "Churi 4",
+      "cat": "Bangles",
+      "price": 285,
+      "salePrice": null,
+      "img": "/images/uploads/IMG-20261115-WA0028.jpg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "Hhh",
+      "code": "1235"
+    },
+    {
+      "name": "Churi 1",
+      "cat": "Bangles",
+      "price": 250,
+      "salePrice": 180,
+      "img": "/images/uploads/IMG-20261115-WA0022.jpg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "Bdjdbdkd",
+      "code": "1234"
+    },
+    {
       "name": "Churi",
       "cat": "Bangles",
       "price": 280,
