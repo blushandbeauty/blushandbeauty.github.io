@@ -64,13 +64,14 @@ function start(C) {
   pager.className = "pager"; pager.setAttribute("aria-label", "Pages");
   $("grid").insertAdjacentElement("afterend", pager);
 
-  document.title = C.shopName + " | Handmade hair bands & more";
+  document.title = C.shopName + " | Hair bands, Bangles & Flower Bouquets";
   $("brand").textContent = C.shopName;
   $("fbrand").textContent = C.shopName;
   if (C.logo) {
     const lg = document.createElement("img");
     lg.src = C.logo; lg.alt = C.shopName; lg.className = "logo";
-    $("brand").prepend(lg);
+    $("brand").textContent = "";
+    $("brand").appendChild(lg);
   }
   $("headline").textContent = C.headline;
   $("tagline").textContent = C.tagline;
