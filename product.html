@@ -27,6 +27,10 @@
   .mname{margin:.5rem 0 .1rem;font-weight:600}
   .mprice{margin:0;font-weight:700}
   .mprice .pold{font-size:.85rem}
+  .pthumbs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+  .pthumbs button{width:64px;height:64px;padding:0;border:2px solid transparent;border-radius:10px;overflow:hidden;cursor:pointer;background:none}
+  .pthumbs button.on{border-color:#d6336c}
+  .pthumbs img{width:100%;height:100%;object-fit:cover;display:block}
 </style>
 </head>
 <body>
@@ -59,10 +63,31 @@ Promise.all([load("shop"), load("products"), load("categories")]).then(([shop, p
   document.title = p.name + " | " + (shop.shopName || "");
   box.textContent = "";
 
+  const photos = [p.img].concat(p.images || []).filter((u, i, arr) => u && arr.indexOf(u) === i);
   const pic = document.createElement("div");
   pic.className = "ppic";
-  if (p.img) { const im = document.createElement("img"); im.src = p.img; im.alt = p.name; pic.appendChild(im); }
+  let mainImg = null;
+  if (photos.length) { mainImg = document.createElement("img"); mainImg.src = photos[0]; mainImg.alt = p.name; pic.appendChild(mainImg); }
   else pic.textContent = p.emoji || "🎀";
+
+  const left = document.createElement("div");
+  left.appendChild(pic);
+  if (photos.length > 1) {
+    const thumbs = document.createElement("div"); thumbs.className = "pthumbs";
+    photos.forEach((u, i) => {
+      const b = document.createElement("button"); b.type = "button";
+      b.setAttribute("aria-label", "Photo " + (i + 1));
+      if (i === 0) b.classList.add("on");
+      const t = document.createElement("img"); t.src = u; t.alt = "";
+      b.appendChild(t);
+      b.onclick = () => {
+        mainImg.src = u;
+        thumbs.querySelectorAll("button").forEach(x => x.classList.toggle("on", x === b));
+      };
+      thumbs.appendChild(b);
+    });
+    left.appendChild(thumbs);
+  }
 
   const info = document.createElement("div");
   info.className = "pinfo";
@@ -86,7 +111,7 @@ Promise.all([load("shop"), load("products"), load("categories")]).then(([shop, p
   }
 
   info.append(cat, h1, price, desc, btn);
-    box.append(pic, info);
+  box.append(left, info);
 
   // "You may also like": up to 4 other products from the same category
   const hiddenCats = new Set((cats.categories || []).filter(c => c.hidden).map(c => c.name));
