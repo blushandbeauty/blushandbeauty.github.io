@@ -66,6 +66,11 @@ collections:
               - { label: Price, name: price, widget: number, value_type: int, min: 0 }
               - { label: "Sale price (optional. Fill only if this product is on discount, must be lower than Price)", name: salePrice, widget: number, value_type: int, min: 0, required: false }
               - { label: Photo, name: img, widget: image, required: false }
+              - label: "More photos (optional. The Photo above stays the main one; add extra angles here)"
+                name: images
+                widget: list
+                required: false
+                field: { label: Photo, name: photo, widget: image }
               - { label: Emoji (shown only if there is no photo), name: emoji, widget: string, required: false }
               - { label: Sold out, name: soldOut, widget: boolean, default: false, required: false }
               - { label: Description (size, material, colours, etc.), name: desc, widget: text, required: false }
