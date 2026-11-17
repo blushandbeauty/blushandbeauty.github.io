@@ -15,7 +15,7 @@ collections:
         label: Shop details
         file: content/shop.json
         fields:
-          - { label: Shop name, name: shopName, widget: string }
+          - { label: Owner name, name: owner, widget: string, required: false }
           - { label: "Shop logo (optional. A PNG with a transparent background works best)", name: logo, widget: image, required: false }
           - { label: Big headline, name: headline, widget: string }
           - { label: Tagline, name: tagline, widget: string }
