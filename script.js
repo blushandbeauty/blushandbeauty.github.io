@@ -67,6 +67,11 @@ function start(C) {
   document.title = C.shopName + " | Handmade hair bands & more";
   $("brand").textContent = C.shopName;
   $("fbrand").textContent = C.shopName;
+  if (C.logo) {
+    const lg = document.createElement("img");
+    lg.src = C.logo; lg.alt = C.shopName; lg.className = "logo";
+    $("brand").prepend(lg);
+  }
   $("headline").textContent = C.headline;
   $("tagline").textContent = C.tagline;
   $("owner").textContent = C.owner;
