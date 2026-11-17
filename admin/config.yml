@@ -15,11 +15,11 @@ collections:
         label: Shop details
         file: content/shop.json
         fields:
-          - { label: Owner name, name: owner, widget: string, required: false }
+          - { label: Shop name, name: shopName, widget: string }
           - { label: "Shop logo (optional. A PNG with a transparent background works best)", name: logo, widget: image, required: false }
           - { label: Big headline, name: headline, widget: string }
           - { label: Tagline, name: tagline, widget: string }
-          - { label: Owner name, name: owner, widget: string }
+          - { label: Owner name, name: owner, widget: string, required: false }
           - { label: Her story (leave empty to hide the About section), name: story, widget: text, required: false }
           - { label: Her photo, name: aboutPhoto, widget: image, required: false }
           - { label: WhatsApp number (country code first, e.g. 8801712345678), name: whatsapp, widget: string }
