@@ -123,3 +123,8 @@ footer .links{align-items:center}
 .pager button.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .pager button:disabled{opacity:.4;cursor:not-allowed}
 @media(max-width:760px){html{scroll-padding-top:8rem}}
+
+
+.tile .ph{position:relative}
+.tag-off{position:absolute;top:8px;left:8px;background:#d6336c;color:#fff;font-size:.75rem;font-weight:700;padding:.15rem .5rem;border-radius:999px}
+.price .pold{text-decoration:line-through;opacity:.55;font-weight:400;font-size:.85em;margin-left:.4rem}
