@@ -4,21 +4,15 @@
       "name": "Churi",
       "cat": "Bangles",
       "price": 280,
-      "img": "/images/uploads/45420.png",
-      "emoji": "🎀",
-      "soldOut": true,
-      "desc": "",
-      "code": "you need to select a code like (1000, 1001) so that every single product has a unique code. you can't change it after adding."
-    },
-    {
-      "name": "Hair band",
-      "cat": "Hair bands",
-      "price": 200,
-      "img": "",
-      "emoji": "🧶",
+      "salePrice": 250,
+      "img": "/images/uploads/IMG-20261115-WA0023.jpg",
+      "images": [
+        "/images/uploads/IMG-20261115-WA0027.jpg"
+      ],
+      "emoji": "",
       "soldOut": false,
-      "desc": "",
-      "code": ""
+      "desc": "Djdiddjdbdbjdnsjddb",
+      "code": "12234t5y"
     }
   ]
 }
