@@ -64,6 +64,7 @@ collections:
                 value_field: "categories.*.name"
                 display_fields: ["categories.*.name"]
               - { label: Price, name: price, widget: number, value_type: int, min: 0 }
+              - { label: "Sale price (optional. Fill only if this product is on discount, must be lower than Price)", name: salePrice, widget: number, value_type: int, min: 0, required: false }
               - { label: Photo, name: img, widget: image, required: false }
               - { label: Emoji (shown only if there is no photo), name: emoji, widget: string, required: false }
               - { label: Sold out, name: soldOut, widget: boolean, default: false, required: false }
