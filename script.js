@@ -203,11 +203,21 @@ function start(C) {
     add("Next", page + 1, {disabled: page === pages, aria: "Next page"});
   }
 
+    // after searching, bring the results into view (just under the search bar)
+  function showResults() {
+    const bar = $("q").getBoundingClientRect().bottom;
+    const y = $("cats").getBoundingClientRect().top + window.scrollY - Math.max(bar, 0) - 16;
+    window.scrollTo({top: Math.max(0, y), behavior: "smooth"});
+  }
+
   $("q").addEventListener("input", e => {
     query = e.target.value; page = 1;
     $("clear").hidden = !query;
     render();
+    if (query.trim()) showResults();
+     
   });
+   
   $("clear").onclick = () => { $("q").value = ""; query = ""; page = 1; $("clear").hidden = true; render(); $("q").focus(); };
   render();
 
