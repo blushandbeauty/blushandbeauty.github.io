@@ -18,12 +18,22 @@
   .poff{display:inline-block;background:#d6336c;color:#fff;font-size:.8rem;font-weight:700;padding:.15rem .55rem;border-radius:999px;margin-left:.5rem;vertical-align:middle}
   .pdesc{line-height:1.6;margin:0 0 1.2rem;white-space:pre-line}
   @media (min-width:700px){.pbox{grid-template-columns:1fr 1fr;align-items:start}}
+  #more h2{margin:2.5rem 0 1rem}
+  .mgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  @media (min-width:700px){.mgrid{grid-template-columns:repeat(4,1fr)}}
+  .mcard{color:inherit;text-decoration:none;display:block}
+  .mpic{background:#F7ECEE;border-radius:14px;overflow:hidden;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:3rem}
+  .mpic img{width:100%;height:100%;object-fit:cover;display:block}
+  .mname{margin:.5rem 0 .1rem;font-weight:600}
+  .mprice{margin:0;font-weight:700}
+  .mprice .pold{font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="pwrap">
   <a class="pback" href="index.html">← Back to shop</a>
   <div id="product" class="pbox">Loading...</div>
+  <div id="more"></div>
 </div>
 
 <script>
@@ -32,7 +42,7 @@ const load = name => fetch("content/" + name + ".json").then(r => {
   return r.json();
 });
 
-Promise.all([load("shop"), load("products")]).then(([shop, prods]) => {
+Promise.all([load("shop"), load("products"), load("categories")]).then(([shop, prods, cats]) => {
   const box = document.getElementById("product");
   const key = new URLSearchParams(location.search).get("p");
   const p = (prods.products || []).find(x => (x.code || x.name) === key);
@@ -76,7 +86,33 @@ Promise.all([load("shop"), load("products")]).then(([shop, prods]) => {
   }
 
   info.append(cat, h1, price, desc, btn);
-  box.append(pic, info);
+    box.append(pic, info);
+
+  // "You may also like": up to 4 other products from the same category
+  const hiddenCats = new Set((cats.categories || []).filter(c => c.hidden).map(c => c.name));
+  const more = (prods.products || [])
+    .filter(x => x !== p && x.cat === p.cat && !x.soldOut && !hiddenCats.has(x.cat))
+    .slice(0, 4);
+  if (more.length) {
+    const wrap = document.getElementById("more");
+    const title = document.createElement("h2"); title.textContent = "You may also like";
+    const row = document.createElement("div"); row.className = "mgrid";
+    more.forEach(x => {
+      const a = document.createElement("a"); a.className = "mcard";
+      a.href = "product.html?p=" + encodeURIComponent(x.code || x.name);
+      const ph = document.createElement("div"); ph.className = "mpic";
+      if (x.img) { const im = document.createElement("img"); im.src = x.img; im.alt = x.name; im.loading = "lazy"; ph.appendChild(im); }
+      else ph.textContent = x.emoji || "🎀";
+      const nm = document.createElement("p"); nm.className = "mname"; nm.textContent = x.name;
+      const onSale = x.salePrice && x.salePrice < x.price;
+      const pr = document.createElement("p"); pr.className = "mprice";
+      pr.append(cur + (onSale ? x.salePrice : x.price));
+      if (onSale) { const old = document.createElement("span"); old.className = "pold"; old.textContent = cur + x.price; pr.append(old); }
+      a.append(ph, nm, pr);
+      row.appendChild(a);
+    });
+    wrap.append(title, row);
+  }
 }).catch(() => {
   document.getElementById("product").textContent = "Could not load. Please refresh the page.";
 });
