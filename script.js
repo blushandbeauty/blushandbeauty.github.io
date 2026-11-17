@@ -134,7 +134,17 @@ function start(C) {
       else ph.textContent = p.emoji || "🎀";
       const cn = document.createElement("p"); cn.className = "cn"; cn.textContent = p.cat || "";
       const h3 = document.createElement("h3"); h3.textContent = p.name;
-      const pr = document.createElement("p"); pr.className = "price"; pr.textContent = cur + p.price;
+      const onSale = p.salePrice && p.salePrice < p.price;
+      const finalPrice = onSale ? p.salePrice : p.price;
+      const pr = document.createElement("p"); pr.className = "price";
+      pr.append(cur + finalPrice);
+      if (onSale) {
+        const old = document.createElement("span"); old.className = "pold"; old.textContent = cur + p.price;
+        pr.append(old);
+        const tag = document.createElement("span"); tag.className = "tag-off";
+        tag.textContent = Math.round((p.price - p.salePrice) / p.price * 100) + "% OFF";
+        ph.appendChild(tag);
+      }
       let a;
       if (p.soldOut) {
         a = document.createElement("span");
@@ -142,7 +152,7 @@ function start(C) {
       } else {
         a = document.createElement("a");
         a.className = "btn"; a.target = "_blank"; a.rel = "noopener";
-        a.href = wa("Hi! I’d like to order the " + p.name + " (" + cur + p.price + ").\n" + pageUrl);
+        a.href = wa("Hi! I’d like to order the " + p.name + " (" + cur + finalPrice + ").\n" + pageUrl);
         a.textContent = "Order on WhatsApp";
       }
       const pa = document.createElement("a");
