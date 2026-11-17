@@ -1,6 +1,18 @@
 {
   "products": [
     {
+      "name": "Churi 5054",
+      "cat": "Bangles",
+      "price": 350,
+      "salePrice": null,
+      "img": "/images/uploads/IMG-20261115-WA0011.jpg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "Tddf",
+      "code": "1234567"
+    },
+    {
       "name": "Churi 5",
       "cat": "Bangles",
       "price": 500,
