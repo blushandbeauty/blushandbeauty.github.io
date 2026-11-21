@@ -156,10 +156,10 @@ function start(C) {
         a = document.createElement("span");
         a.className = "btn out"; a.textContent = "Sold out";
       } else {
-        a = document.createElement("a");
-        a.className = "btn"; a.target = "_blank"; a.rel = "noopener";
-        a.href = wa("Hi! I’d like to order the " + p.name + " (" + cur + finalPrice + ").\n" + pageUrl);
+        a = document.createElement("button");
+        a.type = "button"; a.className = "btn";
         a.textContent = "Order on WhatsApp";
+        a.onclick = () => openOrder(p, C);
       }
       const pa = document.createElement("a");
       pa.href = link; pa.style.cssText = "color:inherit;text-decoration:none;display:block";
