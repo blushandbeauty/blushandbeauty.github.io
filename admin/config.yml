@@ -26,9 +26,12 @@ collections:
           - { label: Instagram link, name: instagram, widget: string, required: false }
           - { label: Facebook link, name: facebook, widget: string, required: false }
           - { label: Currency symbol, name: currency, widget: string, default: "৳" }
+          - { label: Delivery charge inside Sylhet, name: deliveryInside, widget: number, value_type: int, min: 0, default: 120 }
+          - { label: Delivery charge outside Sylhet, name: deliveryOutside, widget: number, value_type: int, min: 0, default: 150 }
+          - { label: "Payment note shown in the order popup (for example: Cash on delivery, or bKash/Nagad number)", name: paymentNote, widget: text, required: false }
           - { label: Selling points (3 short lines), name: perks, widget: list, required: false }
           - { label: Good to know (delivery, returns, how to order - one line each), name: notes, widget: list, required: false }
-
+          
       - name: categories
         label: Categories
         file: content/categories.json
@@ -66,6 +69,11 @@ collections:
                 display_fields: ["categories.*.name"]
               - { label: Price, name: price, widget: number, value_type: int, min: 0 }
               - { label: "Sale price (optional. Fill only if this product is on discount, must be lower than Price)", name: salePrice, widget: number, value_type: int, min: 0, required: false }
+              - label: "Sizes (optional. Leave empty if this product has no sizes. Add one per line, e.g. 2.4, 2.6, 2.8)"
+                name: sizes
+                widget: list
+                required: false
+                field: { label: Size, name: size, widget: string }
               - { label: Photo, name: img, widget: image, required: false }
               - label: "More photos (optional. The Photo above stays the main one; add extra angles here)"
                 name: images
