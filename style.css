@@ -131,3 +131,32 @@ footer .links{align-items:center}
 
 
 #brand .logo{height:64px;width:auto;vertical-align:middle;margin-right:.5rem}
+
+
+
+
+button.btn{cursor:pointer;font:inherit}
+.ovl{position:fixed;inset:0;background:rgba(43,27,46,.55);z-index:1000;display:flex;align-items:flex-end;justify-content:center}
+@media (min-width:700px){.ovl{align-items:center}}
+.obox{position:relative;background:#fff;width:100%;max-width:480px;max-height:92vh;overflow-y:auto;border-radius:20px 20px 0 0;padding:1.2rem 1.2rem 1.5rem;box-sizing:border-box}
+@media (min-width:700px){.obox{border-radius:20px}}
+.obox h2{margin:0 0 .8rem}
+.oclose{position:absolute;top:.6rem;right:.8rem;border:0;background:none;font-size:2rem;line-height:1;cursor:pointer;color:inherit}
+.oprod{display:flex;gap:.8rem;align-items:center;margin-bottom:1rem}
+.opic{width:64px;height:64px;border-radius:12px;overflow:hidden;background:#F7ECEE;display:flex;align-items:center;justify-content:center;font-size:2rem;flex:none}
+.opic img{width:100%;height:100%;object-fit:cover}
+.of{display:block;margin-bottom:.9rem}
+.of>span{display:block;font-weight:600;margin-bottom:.3rem}
+.of input[type=text],.of input[type=tel],.of select,.of textarea{width:100%;box-sizing:border-box;padding:.65rem .8rem;border:1px solid #d9c9cf;border-radius:10px;font:inherit}
+.of small{display:block;opacity:.7;margin-top:.4rem}
+.qty{display:flex;align-items:center;gap:.8rem}
+.qty button{width:40px;height:40px;border-radius:50%;border:1px solid #d9c9cf;background:#fff;font-size:1.3rem;cursor:pointer}
+.qv{min-width:2ch;text-align:center;font-weight:700;font-size:1.1rem}
+.zones{display:flex;gap:.6rem;flex-wrap:wrap}
+.zone{border:1px solid #d9c9cf;border-radius:10px;padding:.6rem .8rem;cursor:pointer}
+.osum{background:#F7ECEE;border-radius:12px;padding:.8rem 1rem;margin:.4rem 0 1rem}
+.osum div{display:flex;justify-content:space-between;padding:.15rem 0}
+.osum .tot{font-weight:700;font-size:1.1rem;border-top:1px solid #e6cfd6;margin-top:.3rem;padding-top:.5rem}
+.opay{font-size:.9rem;opacity:.8;white-space:pre-line;margin:0 0 1rem}
+.oerr{color:#c0224f;font-weight:600;margin:0 0 .8rem}
+.osend{width:100%}
