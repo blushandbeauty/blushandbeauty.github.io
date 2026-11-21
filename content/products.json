@@ -5,6 +5,9 @@
       "cat": "Bangles",
       "price": 350,
       "salePrice": null,
+      "sizes": [
+        "every size is available"
+      ],
       "img": "/images/uploads/IMG-20261115-WA0011.jpg",
       "images": [],
       "emoji": "",
@@ -17,6 +20,7 @@
       "cat": "Bangles",
       "price": 500,
       "salePrice": null,
+      "sizes": [],
       "img": "/images/uploads/IMG-20261115-WA0015.jpg",
       "images": [],
       "emoji": "",
@@ -29,6 +33,7 @@
       "cat": "Bangles",
       "price": 285,
       "salePrice": null,
+      "sizes": [],
       "img": "/images/uploads/IMG-20261115-WA0028.jpg",
       "images": [],
       "emoji": "",
@@ -41,6 +46,7 @@
       "cat": "Bangles",
       "price": 250,
       "salePrice": 180,
+      "sizes": [],
       "img": "/images/uploads/IMG-20261115-WA0022.jpg",
       "images": [],
       "emoji": "",
@@ -53,6 +59,7 @@
       "cat": "Bangles",
       "price": 280,
       "salePrice": 250,
+      "sizes": [],
       "img": "/images/uploads/IMG-20261115-WA0023.jpg",
       "images": [
         "/images/uploads/IMG-20261115-WA0027.jpg"
