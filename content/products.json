@@ -1,17 +1,42 @@
 {
   "products": [
     {
-      "name": "Hair clip",
-      "cat": "Hair Clips",
-      "price": 150,
+      "name": "Churi",
+      "cat": "Bangles",
+      "price": 250,
       "salePrice": null,
-      "sizes": [],
-      "img": "/images/uploads/churi1030.jpeg",
+      "sizes": [
+        "24",
+        "26",
+        "28"
+      ],
+      "img": "/images/uploads/churi1012.jpeg",
       "images": [],
       "emoji": "",
       "soldOut": false,
       "desc": "",
-      "code": "churi1030"
+      "code": "churi1012"
+    },
+    {
+      "name": "Long Overcoat",
+      "cat": "Girls Overcoat",
+      "price": 999,
+      "salePrice": 750,
+      "sizes": [
+        "Body 38",
+        "Body 40",
+        "Body 42",
+        "Body 44",
+        "Body 46"
+      ],
+      "img": "/images/uploads/overcoat1000.jpeg",
+      "images": [
+        "/images/uploads/overcoat1000(1).jpeg"
+      ],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "overcoat1000"
     },
     {
       "name": "Hair clip",
@@ -27,6 +52,19 @@
       "soldOut": false,
       "desc": "",
       "code": "churi1029"
+    },
+    {
+      "name": "Hair clip",
+      "cat": "Hair Clips",
+      "price": 150,
+      "salePrice": null,
+      "sizes": [],
+      "img": "/images/uploads/churi1030.jpeg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1030"
     },
     {
       "name": "Hair clip",
@@ -308,23 +346,6 @@
         "26",
         "28"
       ],
-      "img": "/images/uploads/churi1012.jpeg",
-      "images": [],
-      "emoji": "",
-      "soldOut": false,
-      "desc": "",
-      "code": "churi1012"
-    },
-    {
-      "name": "Churi",
-      "cat": "Bangles",
-      "price": 250,
-      "salePrice": null,
-      "sizes": [
-        "24",
-        "26",
-        "28"
-      ],
       "img": "/images/uploads/churi1011.jpeg",
       "images": [],
       "emoji": "",
@@ -473,27 +494,6 @@
       "soldOut": false,
       "desc": "",
       "code": "churi1003"
-    },
-    {
-      "name": "Long Overcoat",
-      "cat": "Girls Overcoat",
-      "price": 999,
-      "salePrice": 750,
-      "sizes": [
-        "Body 38",
-        "Body 40",
-        "Body 42",
-        "Body 44",
-        "Body 46"
-      ],
-      "img": "/images/uploads/overcoat1000.jpeg",
-      "images": [
-        "/images/uploads/overcoat1000(1).jpeg"
-      ],
-      "emoji": "",
-      "soldOut": false,
-      "desc": "",
-      "code": "overcoat1000"
     },
     {
       "name": "Semi long coat",
