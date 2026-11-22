@@ -6,6 +6,19 @@
       "price": 150,
       "salePrice": null,
       "sizes": [],
+      "img": "/images/uploads/churi1030.jpeg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1030"
+    },
+    {
+      "name": "Hair clip",
+      "cat": "Hair Clips",
+      "price": 150,
+      "salePrice": null,
+      "sizes": [],
       "img": "/images/uploads/churi1029.jpeg",
       "images": [
         "/images/uploads/churi1029(1).jpeg"
