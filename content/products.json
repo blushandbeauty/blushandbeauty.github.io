@@ -4,6 +4,24 @@
       "name": "Churi",
       "cat": "Bangles",
       "price": 250,
+      "salePrice": 280,
+      "sizes": [
+        "24"
+      ],
+      "img": "/images/uploads/churi1004.jpeg",
+      "images": [
+        "/images/uploads/churi1004(2).jpeg",
+        "/images/uploads/churi1004(1).jpeg"
+      ],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1004"
+    },
+    {
+      "name": "Churi",
+      "cat": "Bangles",
+      "price": 250,
       "salePrice": null,
       "sizes": [
         "24",
