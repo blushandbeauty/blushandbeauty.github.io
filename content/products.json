@@ -10,6 +10,23 @@
         "26",
         "28"
       ],
+      "img": "/images/uploads/churi1012.jpeg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1012"
+    },
+    {
+      "name": "Churi",
+      "cat": "Bangles",
+      "price": 250,
+      "salePrice": null,
+      "sizes": [
+        "24",
+        "26",
+        "28"
+      ],
       "img": "/images/uploads/churi1011.jpeg",
       "images": [],
       "emoji": "",
