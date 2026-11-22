@@ -1,6 +1,36 @@
 {
   "products": [
     {
+      "name": "Hair clip",
+      "cat": "Hair Clips",
+      "price": 150,
+      "salePrice": null,
+      "sizes": [],
+      "img": "/images/uploads/churi1029.jpeg",
+      "images": [
+        "/images/uploads/churi1029(1).jpeg"
+      ],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1029"
+    },
+    {
+      "name": "Hair clip",
+      "cat": "Hair Clips",
+      "price": 150,
+      "salePrice": null,
+      "sizes": [],
+      "img": "/images/uploads/churi1028.jpeg",
+      "images": [
+        "/images/uploads/churi1028(1).jpeg"
+      ],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1028"
+    },
+    {
       "name": "Churi",
       "cat": "Bangles",
       "price": 250,
