@@ -25,28 +25,10 @@
       "hidden": false
     },
     {
-      "name": "Headbands",
-      "icon": "💐",
+      "name": "Girls Overcoat",
+      "icon": "🧥",
       "logo": "",
-      "hidden": true
-    },
-    {
-      "name": "Headbands",
-      "icon": "💐",
-      "logo": "",
-      "hidden": true
-    },
-    {
-      "name": "Headbands",
-      "icon": "💐",
-      "logo": "",
-      "hidden": true
-    },
-    {
-      "name": "Headbands",
-      "icon": "💐",
-      "logo": "",
-      "hidden": true
+      "hidden": false
     }
   ]
 }
