@@ -1,73 +1,25 @@
 {
   "products": [
     {
-      "name": "Churi 5054",
-      "cat": "Bangles",
-      "price": 350,
-      "salePrice": null,
+      "name": "Long Overcoat",
+      "cat": "Girls Overcoat",
+      "price": 999,
+      "salePrice": 750,
       "sizes": [
-        "every size is available"
+        "Body 38",
+        "Body 40",
+        "Body 42",
+        "Body 44",
+        "Body 46"
       ],
-      "img": "/images/uploads/IMG-20261115-WA0011.jpg",
-      "images": [],
-      "emoji": "",
-      "soldOut": false,
-      "desc": "Tddf",
-      "code": "1234567"
-    },
-    {
-      "name": "Churi 5",
-      "cat": "Bangles",
-      "price": 500,
-      "salePrice": null,
-      "sizes": [],
-      "img": "/images/uploads/IMG-20261115-WA0015.jpg",
-      "images": [],
-      "emoji": "",
-      "soldOut": false,
-      "desc": "Bdhshs",
-      "code": "1236"
-    },
-    {
-      "name": "Churi 4",
-      "cat": "Bangles",
-      "price": 285,
-      "salePrice": null,
-      "sizes": [],
-      "img": "/images/uploads/IMG-20261115-WA0028.jpg",
-      "images": [],
-      "emoji": "",
-      "soldOut": false,
-      "desc": "Hhh",
-      "code": "1235"
-    },
-    {
-      "name": "Churi 1",
-      "cat": "Bangles",
-      "price": 250,
-      "salePrice": 180,
-      "sizes": [],
-      "img": "/images/uploads/IMG-20261115-WA0022.jpg",
-      "images": [],
-      "emoji": "",
-      "soldOut": false,
-      "desc": "Bdjdbdkd",
-      "code": "1234"
-    },
-    {
-      "name": "Churi",
-      "cat": "Bangles",
-      "price": 280,
-      "salePrice": 250,
-      "sizes": [],
-      "img": "/images/uploads/IMG-20261115-WA0023.jpg",
+      "img": "/images/uploads/overcoat1000.jpeg",
       "images": [
-        "/images/uploads/IMG-20261115-WA0027.jpg"
+        "/images/uploads/overcoat1000(1).jpeg"
       ],
       "emoji": "",
       "soldOut": false,
-      "desc": "Djdiddjdbdbjdnsjddb",
-      "code": "12234t5y"
+      "desc": "",
+      "code": "longovercoat1000"
     }
   ]
 }
