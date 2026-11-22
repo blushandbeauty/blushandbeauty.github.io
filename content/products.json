@@ -3,6 +3,40 @@
     {
       "name": "Churi",
       "cat": "Bangles",
+      "price": 190,
+      "salePrice": null,
+      "sizes": [
+        "24",
+        "26",
+        "28"
+      ],
+      "img": "/images/uploads/churi1019.jpeg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1019"
+    },
+    {
+      "name": "Churi",
+      "cat": "Bangles",
+      "price": 250,
+      "salePrice": null,
+      "sizes": [
+        "24",
+        "26",
+        "28"
+      ],
+      "img": "/images/uploads/churi1018.jpeg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "",
+      "code": "churi1018"
+    },
+    {
+      "name": "Churi",
+      "cat": "Bangles",
       "price": 250,
       "salePrice": null,
       "sizes": [
