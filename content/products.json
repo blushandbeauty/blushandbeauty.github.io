@@ -1,6 +1,19 @@
 {
   "products": [
     {
+      "name": "Custom Hairband: Made Just for You",
+      "cat": "Hair bands",
+      "price": 290,
+      "salePrice": null,
+      "sizes": [],
+      "img": "/images/uploads/hairband1030.jpeg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "Make it yours! 💕 This handmade hairband is designed the way you like it. Pick your favorite colors, add a name or a small charm, and we'll make it just for you.",
+      "code": "hairband1030"
+    },
+    {
       "name": "Churi",
       "cat": "Bangles",
       "price": 250,
