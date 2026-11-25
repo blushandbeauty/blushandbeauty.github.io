@@ -67,6 +67,21 @@
       "code": "hairband1031"
     },
     {
+      "name": "Churi",
+      "cat": "Bangles",
+      "price": 40,
+      "salePrice": null,
+      "sizes": [
+        "Every size is available."
+      ],
+      "img": "/images/uploads/churi1032.jpeg",
+      "images": [],
+      "emoji": "",
+      "soldOut": false,
+      "desc": "📦 Sold by the dozen\nThis churi is sold in a set of 12 pieces (1 dozen) for ৳40.",
+      "code": "churi1032"
+    },
+    {
       "name": "Hair clip",
       "cat": "Hair Clips",
       "price": 150,
